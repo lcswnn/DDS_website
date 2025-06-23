@@ -1,13 +1,13 @@
 :root {
-  --white: (#fffafa);
+  --white: #fffafa;
   --blue1: #0d80bf;
   --blue2: #c0e9ff;
   --blue3: #3faee9;
-  --blue4: #ebf8ff;
+  --blue4: #e6f5ff;
   --hover: #81d3ff;
-  --black: #141414;
+  --black: #1e1e1e;
   --grey: #505050;
-  --grey2: #d6d6d6;
+  --grey2: #f4f4f4;
 }
 
 .page-grid {
@@ -20,6 +20,7 @@
     "images images"
     "section2 section2"
     "section3 section3"
+    "section4 section4"
     "footer footer";
   grid-template-rows: auto auto 1fr auto;
   min-height: 100vh;
@@ -28,7 +29,7 @@
 
 html {
   font-size: 16px;
-  background-color: var(--white);
+  background-color: var(--blue4);
 }
 
 body {
@@ -58,6 +59,20 @@ body {
 
 .content-area2 {
   grid-area: section2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-area3 {
+  grid-area: section3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-area4 {
+  grid-area: section4;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,6 +117,7 @@ header .nav-links a {
 
 .dropdown {
   position: absolute;
+  z-index: 1000;
   top: 100%;
   left: 0;
   background-color: var(--grey);
@@ -117,7 +133,7 @@ header .nav-links a {
   opacity: 1;
   visibility: visible;
   border-radius: 1.7rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
 
 .dropdown li {
@@ -200,7 +216,7 @@ header .appointment {
 header .appointment:hover {
   background-color: var(--hover);
   transition: background-color 0.3s ease;
-  color: var(--grey);
+  color: var(--black);
 }
 
 header nav .phone-number {
@@ -249,6 +265,12 @@ header nav .phone-number {
   box-sizing: border-box;
   background-color: var(--white);
   border-radius: 2rem;
+  position: relative; /* Add this */
+}
+
+.hero-slide {
+  position: relative;
+  width: 100%;
 }
 
 .hero-image {
@@ -257,16 +279,77 @@ header nav .phone-number {
   margin: 0 auto;
   display: block;
   object-fit: cover;
-  object-position: center 30%;
-  border-radius: 2rem;
+  object-position: center 25%;
+  border-radius: 1.5rem;
   margin-top: 50px;
+  border: #141414 2px solid;
 }
 
-.hero h2 {
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: calc(100% - 60px);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(255, 0, 0, 0));
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 60px;
+}
+
+.hero-content {
+  color: #fffafa;
+  margin-top: 300px;
+  margin-left: 50px;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: left;
+  border-left: var(--blue1) 5px solid;
+}
+
+.hero-overlay .hero-content h2 {
   font-family: "Archivo Narrow", Verdana, sans-serif;
-  font-size: 2rem;
-  margin-top: 50px;
+  font-size: 2.1rem;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  color: #fffafa;
+  line-height: 1.2;
+  margin-top: 10px;
+}
+
+.hero-overlay .hero-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  margin: 0 0 10px 0;
+  color: #fffafa;
+  font-weight: 300;
+  padding: 0px 20px;
+}
+
+.hero-button {
+  background-color: var(--blue1);
+  color: white;
+  padding: 15px 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.hero-button:hover {
+  background-color: var(--hover);
   color: var(--grey);
+}
+
+.content-area1 h2 {
+  font-family: "Archivo Narrow", Verdana, sans-serif;
+  font-size: 2.1rem;
+  margin-top: 50px;
+  color: var(--black);
   padding: 0 20px;
   text-align: center;
   line-height: 1.2;
@@ -275,7 +358,7 @@ header nav .phone-number {
 .content-area1 .welcome-text {
   grid-area: section1;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--black);
   padding: 10px 200px;
   margin-bottom: 20px;
@@ -288,7 +371,8 @@ header nav .phone-number {
   color: var(--black);
   padding: 10px 100px;
   margin-bottom: 20px;
-  font-weight: bold;
+  font-weight: 650;
+  text-decoration: underline;
 }
 
 .images-area {
@@ -330,7 +414,7 @@ header nav .phone-number {
 
 .content-area3 .testimonials-title {
   font-family: "Archivo Narrow", sans-serif;
-  font-size: 1.9rem;
+  font-size: 2.1rem;
   color: var(--grey);
   margin-bottom: 20px;
 }
@@ -383,6 +467,128 @@ header nav .phone-number {
   font-weight: bold;
   color: var(--black);
   margin-top: 10px;
+}
+
+.content-area4 {
+  grid-area: section4;
+  padding: 40px 20px;
+}
+
+.content-area4 h2 {
+  margin-bottom: 30px;
+  color: var(--black);
+}
+
+.map-grid {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.map-container {
+  flex: 1;
+  min-width: 0;
+}
+
+.map-title {
+  font-family: "Archivo Narrow", sans-serif;
+  font-size: 2.1rem;
+  color: var(--black);
+  margin-bottom: 0;
+}
+
+.map-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  color: var(--black);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.map-iframe {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+}
+
+.map-iframe iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+}
+
+.hours-container {
+  flex: 0 0 350px;
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hours-title {
+  font-family: "Archivo Narrow", sans-serif;
+  font-size: 2.1rem;
+  color: var(--grey);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: #141414 1px solid;
+}
+
+.day {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: var(--black);
+  font-size: 1rem;
+}
+
+.time {
+  font-family: "Montserrat", sans-serif;
+  color: var(--grey);
+  font-size: 1rem;
+}
+
+.directions-button {
+  background-color: var(--white);
+  color: var(--black);
+  text-decoration: none;
+  padding: 15px 20px;
+  border-radius: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: var(--black) 2px solid;
+}
+
+.directions-button:hover {
+  background-color: #3faee9;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer {
+  border-top: var(--blue1) 5px solid;
+  text-align: center;
+  background-color: var(--grey2)
+}
+
+footer h2 {
+  font-size: 2.1rem;
+  font-family: "Archivo Narrow", sans-serif;
+  color: var(--black);
 }
 
 footer p {
