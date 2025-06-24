@@ -3,7 +3,7 @@
   --blue1: #0d80bf;
   --blue2: #c0e9ff;
   --blue3: #3faee9;
-  --blue4: #e6f5ff;
+  --blue4: #daf0ff;
   --hover: #81d3ff;
   --black: #1e1e1e;
   --grey: #505050;
@@ -265,12 +265,31 @@ header nav .phone-number {
   box-sizing: border-box;
   background-color: var(--white);
   border-radius: 2rem;
-  position: relative; /* Add this */
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
 }
 
 .hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hero-slides-container {
   position: relative;
   width: 100%;
+  height: 650px;
 }
 
 .hero-image {
@@ -281,16 +300,14 @@ header nav .phone-number {
   object-fit: cover;
   object-position: center 25%;
   border-radius: 1.5rem;
-  margin-top: 50px;
-  border: #141414 2px solid;
 }
 
 .hero-overlay {
   position: absolute;
-  top: 0;
+  top: 0px;
   left: 0;
   height: 100%;
-  width: calc(100% - 60px);
+  width: 100%;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(255, 0, 0, 0));
   border-radius: 2rem;
   display: flex;
@@ -313,19 +330,20 @@ header nav .phone-number {
   font-family: "Archivo Narrow", Verdana, sans-serif;
   font-size: 2.1rem;
   font-weight: bold;
-  margin: 0 0 10px 0;
+  margin: 0 0 5px 0; /* Reduced bottom margin from 10px to 5px */
   color: #fffafa;
   line-height: 1.2;
   margin-top: 10px;
+  padding: 0px 10px; /* Remove padding to align with subtitle */
 }
 
 .hero-overlay .hero-subtitle {
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
-  margin: 0 0 10px 0;
+  margin: 0 0 15px 0; /* Reduced top margin, added bottom margin for button spacing */
   color: #fffafa;
   font-weight: 300;
-  padding: 0px 20px;
+  padding: 0px 10px; /* Remove padding to align with h2 */
 }
 
 .hero-button {
@@ -343,6 +361,65 @@ header nav .phone-number {
 .hero-button:hover {
   background-color: var(--hover);
   color: var(--grey);
+}
+
+.hero-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 100; /* Add this line */
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--blue1);
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 100;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.hero-arrow-prev {
+  left: 20px;
+}
+
+.hero-arrow-next {
+  right: 20px;
 }
 
 .content-area1 h2 {
@@ -395,7 +472,7 @@ header nav .phone-number {
 .isds-image,
 .cds-image,
 .clearcorrect-image {
-  border: white 4px solid;
+  border: var(--white) 4px solid;
   border-radius: 0.5rem;
   padding: 5px 5px;
   box-shadow: #141414 0px 0px 10px;
@@ -415,7 +492,7 @@ header nav .phone-number {
 .content-area3 .testimonials-title {
   font-family: "Archivo Narrow", sans-serif;
   font-size: 2.1rem;
-  color: var(--grey);
+  color: var(--black);
   margin-bottom: 20px;
 }
 
@@ -491,6 +568,10 @@ header nav .phone-number {
 .map-container {
   flex: 1;
   min-width: 0;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .map-title {
@@ -518,7 +599,6 @@ header nav .phone-number {
 .map-iframe iframe {
   width: 100%;
   height: 450px;
-  border: 0;
 }
 
 .hours-container {
@@ -565,18 +645,19 @@ header nav .phone-number {
 }
 
 .directions-button {
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--blue1);
+  color: var(--white);
   text-decoration: none;
   padding: 15px 20px;
   border-radius: 2rem;
   transition: background-color 0.3s ease, color 0.3s ease;
-  border: var(--black) 2px solid;
+  font-weight: 600;
 }
 
 .directions-button:hover {
-  background-color: #3faee9;
+  background-color: var(--hover);
   transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--black);
 }
 
 footer {
