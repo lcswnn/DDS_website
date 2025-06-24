@@ -493,7 +493,7 @@ header nav .phone-number {
   font-family: "Archivo Narrow", sans-serif;
   font-size: 2.1rem;
   color: var(--black);
-  margin-bottom: 20px;
+  margin: 40px;
 }
 
 .testimonials-container {
@@ -528,7 +528,7 @@ header nav .phone-number {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers vertically */
+  justify-content: center;
   align-items: center;
 }
 
@@ -552,16 +552,16 @@ header nav .phone-number {
 }
 
 .content-area4 h2 {
-  margin-bottom: 30px;
+  font-family: "Archivo Narrow", Verdana, sans-serif;
   color: var(--black);
+  font-size: 2.1rem;
 }
 
 .map-grid {
   width: 100%;
   display: flex;
-  gap: 30px;
+  gap: 40px;
   max-width: 1200px;
-  margin: 0 auto;
   align-items: stretch;
 }
 
@@ -570,15 +570,13 @@ header nav .phone-number {
   min-width: 0;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
   text-align: center;
 }
 
-.map-title {
+.map-container .map-title {
   font-family: "Archivo Narrow", sans-serif;
   font-size: 2.1rem;
   color: var(--black);
-  margin-bottom: 0;
 }
 
 .map-text {
@@ -586,7 +584,6 @@ header nav .phone-number {
   font-size: 1.2rem;
   color: var(--black);
   font-weight: bold;
-  margin-bottom: 20px;
 }
 
 .map-iframe {
@@ -607,6 +604,7 @@ header nav .phone-number {
   padding: 30px;
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 35px;
 }
 
 .hours-title {
@@ -642,6 +640,13 @@ header nav .phone-number {
   font-family: "Montserrat", sans-serif;
   color: var(--grey);
   font-size: 1rem;
+}
+
+.closed {
+  font-family: "Montserrat", sans-serif;
+  color: var(--grey);
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .directions-button {
