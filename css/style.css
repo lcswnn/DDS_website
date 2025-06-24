@@ -535,7 +535,8 @@ header nav .phone-number {
 .testimonials p {
   margin: 0;
   line-height: 1.5;
-  font-weight: 425;
+  font-weight: 450;
+  font-size: 1rem;
 }
 
 .testimonials .patient-name {
