@@ -246,7 +246,7 @@ header .appointment {
   font-family: "Montserrat", sans-serif;
   background-color: var(--blue3);
   padding: 13px 15px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   border-radius: 2rem;
   font-size: 1.2rem;
   text-decoration: none;
@@ -256,8 +256,9 @@ header .appointment {
 
 header .appointment:hover {
   background-color: var(--hover);
-  transition: background-color 0.3s ease;
   color: var(--black);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(52, 152, 219, 0.4);
 }
 
 header nav .phone-number {
@@ -780,7 +781,7 @@ footer p {
   text-align: center;
   font-size: 2.2em;
   font-weight: 600;
-  color: #87CEEB;
+  color: var(--grey2);
 }
 
 .appointment-form form {
@@ -804,7 +805,6 @@ footer p {
 .appointment-form form > button {
   grid-column: 1 / -1;
   justify-self: center;
-  margin-top: 20px;
 }
 
 .appointment-form label {
@@ -838,15 +838,15 @@ footer p {
 }
 
 .appointment-form form > div:nth-child(4) input {
-  height: 200px;
+  height: 235px;
   resize: vertical;
   padding-top: 25px;
-  vertical-align: top;
+  vertical-align: bottom;
 }
 
 .appointment-form button[type="submit"] {
-  background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
-  color: white;
+  background: var(--blue3);
+  color: var(--grey2);
   border: none;
   padding: 18px 50px;
   font-size: 18px;
@@ -860,7 +860,8 @@ footer p {
 }
 
 .appointment-form button[type="submit"]:hover {
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  background: var(--hover);
+  color: var(--black);
   transform: translateY(-2px);
   box-shadow: 0 12px 35px rgba(52, 152, 219, 0.4);
 }
