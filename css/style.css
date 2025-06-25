@@ -91,6 +91,8 @@ header nav {
   align-items: center;
   justify-content: space-between;
   text-align: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 nav ul {
@@ -98,13 +100,14 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 90px;
+  gap: 50px;
+  flex-wrap: wrap;
 }
 
 header .nav-links a {
   color: #fffafa;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding: 10px 15px;
   border-radius: 2rem;
   background-color: transparent;
@@ -113,6 +116,29 @@ header .nav-links a {
 
 .dropdown-parent {
   position: relative;
+}
+
+.dropdown-parent > a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.dropdown-parent > a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%) rotate(0deg);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #fffafa;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-parent:hover > a::after {
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .dropdown {
@@ -127,6 +153,20 @@ header .nav-links a {
   visibility: hidden;
   transition: all 0.3s ease;
   display: block;
+  margin-top: 10px;
+}
+
+.dropdown::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 20%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--grey);
 }
 
 .dropdown-parent:hover .dropdown {
@@ -211,6 +251,7 @@ header .appointment {
   font-size: 1.2rem;
   text-decoration: none;
   color: #fffafa;
+  white-space: nowrap;
 }
 
 header .appointment:hover {
@@ -228,6 +269,7 @@ header nav .phone-number {
   align-items: center;
   justify-content: center;
   gap: 15px;
+  padding: 0 20px;
 }
 
 .title .logo {
@@ -330,20 +372,20 @@ header nav .phone-number {
   font-family: "Archivo Narrow", Verdana, sans-serif;
   font-size: 2.1rem;
   font-weight: bold;
-  margin: 0 0 5px 0; /* Reduced bottom margin from 10px to 5px */
+  margin: 0 0 5px 0;
   color: #fffafa;
   line-height: 1.2;
   margin-top: 10px;
-  padding: 0px 10px; /* Remove padding to align with subtitle */
+  padding: 0px 10px;
 }
 
 .hero-overlay .hero-subtitle {
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
-  margin: 0 0 15px 0; /* Reduced top margin, added bottom margin for button spacing */
+  margin: 0 0 15px 0;
   color: #fffafa;
   font-weight: 300;
-  padding: 0px 10px; /* Remove padding to align with h2 */
+  padding: 0px 10px;
 }
 
 .hero-button {
@@ -370,7 +412,7 @@ header nav .phone-number {
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
-  z-index: 100; /* Add this line */
+  z-index: 100;
 }
 
 .dot {
@@ -394,24 +436,29 @@ header nav .phone-number {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  background-color: transparent;
   border: none;
-  font-size: 2rem;
-  padding: 10px 15px;
+  padding: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   z-index: 100;
-  border-radius: 50%;
   width: 50px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.hero-arrow img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .hero-arrow:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+
 }
 
 .hero-arrow-prev {
@@ -437,8 +484,10 @@ header nav .phone-number {
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   color: var(--black);
-  padding: 10px 200px;
+  padding: 10px 20px;
   margin-bottom: 20px;
+  max-width: 1000px;
+  text-align: center;
 }
 
 .content-area2 .serving-text {
@@ -446,10 +495,11 @@ header nav .phone-number {
   font-family: "Montserrat", sans-serif;
   font-size: 1.1rem;
   color: var(--black);
-  padding: 10px 100px;
+  padding: 10px 20px;
   margin-bottom: 20px;
   font-weight: 650;
   text-decoration: underline;
+  text-align: center;
 }
 
 .images-area {
@@ -457,15 +507,17 @@ header nav .phone-number {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 20px;
 }
 
 .images-area .images {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
   margin-top: 20px;
   transition: box-shadow 0.3s ease-in-out;
+  flex-wrap: wrap;
 }
 
 .ada-image,
@@ -476,6 +528,8 @@ header nav .phone-number {
   border-radius: 0.5rem;
   padding: 5px 5px;
   box-shadow: #141414 0px 0px 10px;
+  max-width: 120px;
+  height: auto;
 }
 
 .content-area3 {
@@ -487,6 +541,7 @@ header nav .phone-number {
   background-color: var(--grey2);
   border-top: var(--blue1) 5px solid;
   border-bottom: var(--blue1) 5px solid;
+  padding: 0 20px;
 }
 
 .content-area3 .testimonials-title {
@@ -494,6 +549,7 @@ header nav .phone-number {
   font-size: 2.1rem;
   color: var(--black);
   margin: 40px;
+  text-align: center;
 }
 
 .testimonials-container {
@@ -502,23 +558,31 @@ header nav .phone-number {
   gap: 35px;
   align-items: center;
   margin-bottom: 40px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .top-row {
   display: flex;
   gap: 35px;
   justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .bottom-row {
   display: flex;
   gap: 35px;
   justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .testimonials {
   background-color: #fffafa;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
+  min-width: 280px;
   padding: 20px;
   border-radius: 0.5rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -530,6 +594,7 @@ header nav .phone-number {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex: 1;
 }
 
 .testimonials p {
@@ -556,6 +621,7 @@ header nav .phone-number {
   font-family: "Archivo Narrow", Verdana, sans-serif;
   color: var(--black);
   font-size: 2.1rem;
+  text-align: center;
 }
 
 .map-grid {
@@ -564,11 +630,12 @@ header nav .phone-number {
   gap: 40px;
   max-width: 1200px;
   align-items: stretch;
+  flex-wrap: wrap;
 }
 
 .map-container {
   flex: 1;
-  min-width: 0;
+  min-width: 300px;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -601,6 +668,7 @@ header nav .phone-number {
 
 .hours-container {
   flex: 0 0 350px;
+  min-width: 300px;
   background-color: var(--white);
   padding: 30px;
   border-radius: 0.5rem;
@@ -658,6 +726,8 @@ header nav .phone-number {
   border-radius: 2rem;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-weight: 600;
+  display: inline-block;
+  text-align: center;
 }
 
 .directions-button:hover {
@@ -669,7 +739,8 @@ header nav .phone-number {
 footer {
   border-top: var(--blue1) 5px solid;
   text-align: center;
-  background-color: var(--grey2)
+  background-color: var(--grey2);
+  padding: 20px;
 }
 
 footer h2 {
@@ -682,4 +753,292 @@ footer p {
   font-family: "Montserrat", sans-serif;
   font-size: 0.8rem;
   text-align: center;
+}
+
+.form-area {
+  grid-area: section1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.appointment-form {
+  background: var(--blue1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.appointment-form .title {
+  font-family: "Montserrat", sans-serif;
+  display: block;
+  text-align: center;
+  font-size: 2.2em;
+  font-weight: 600;
+  color: #87CEEB;
+}
+
+.appointment-form form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.appointment-form form > div:nth-child(1),
+.appointment-form form > div:nth-child(2),
+.appointment-form form > div:nth-child(3) {
+  grid-column: 1;
+}
+
+.appointment-form form > div:nth-child(4) {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+}
+
+.appointment-form form > button {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 20px;
+}
+
+.appointment-form label {
+  display: none;
+}
+
+.appointment-form input[type="text"] {
+  width: 100%;
+  padding: 18px 25px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 300;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.appointment-form input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+}
+
+.appointment-form input[type="text"]:focus {
+  outline: none;
+  border-color: #87CEEB;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(135, 206, 235, 0.3);
+}
+
+.appointment-form form > div:nth-child(4) input {
+  height: 200px;
+  resize: vertical;
+  padding-top: 25px;
+  vertical-align: top;
+}
+
+.appointment-form button[type="submit"] {
+  background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+  color: white;
+  border: none;
+  padding: 18px 50px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+}
+
+.appointment-form button[type="submit"]:hover {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(52, 152, 219, 0.4);
+}
+
+.appointment-form button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Disclaimer text */
+.appointment-form::after {
+  content: "Please do not submit any Protected Health Information (PHI).";
+  display: block;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  margin-top: 30px;
+  font-weight: 300;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  nav ul {
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .contact-info {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .title {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .title .logo {
+    height: 70px;
+  }
+  
+  .title-text h1 {
+    font-size: 2rem;
+  }
+  
+  .title-text h3 {
+    font-size: 1.1rem;
+  }
+  
+  .hero-slides-container {
+    height: 400px;
+  }
+  
+  .hero-image {
+    height: 400px;
+  }
+  
+  .hero-overlay {
+    padding-left: 20px;
+  }
+  
+  .hero-content {
+    margin-top: 150px;
+    margin-left: 20px;
+  }
+  
+  .hero-overlay .hero-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-overlay .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .content-area1 .welcome-text {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+  }
+  
+  .images-area .images {
+    gap: 15px;
+  }
+  
+  .ada-image,
+  .isds-image,
+  .cds-image,
+  .clearcorrect-image {
+    max-width: 80px;
+  }
+  
+  .top-row,
+  .bottom-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .testimonials {
+    max-width: 100%;
+  }
+  
+  .map-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .hours-container {
+    flex: none;
+    margin-top: 20px;
+  }
+  
+  .map-iframe iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  header .nav-links a {
+    font-size: 1rem;
+  }
+  
+  .contact-info .phone,
+  .contact-info .phone a,
+  .contact-info .phone-number {
+    font-size: 1.2rem;
+  }
+  
+  .title-text h1 {
+    font-size: 1.8rem;
+  }
+  
+  .title-text h3 {
+    font-size: 1rem;
+  }
+  
+  .hero-slides-container {
+    height: 300px;
+  }
+  
+  .hero-image {
+    height: 300px;
+  }
+  
+  .hero-content {
+    margin-top: 100px;
+    margin-left: 10px;
+  }
+  
+  .hero-overlay .hero-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+  
+  .content-area1 h2,
+  .content-area3 .testimonials-title,
+  .content-area4 h2,
+  .map-container .map-title {
+    font-size: 1.8rem;
+  }
+  
+  .ada-image,
+  .isds-image,
+  .cds-image,
+  .clearcorrect-image {
+    max-width: 60px;
+  }
 }
