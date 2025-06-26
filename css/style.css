@@ -839,11 +839,34 @@ footer p {
   box-shadow: 0 0 20px rgba(135, 206, 235, 0.3);
 }
 
-.appointment-form form > div:nth-child(4) input {
+.appointment-form textarea {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  padding: 18px 9px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 300;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
   height: 235px;
   resize: vertical;
-  padding-top: 25px;
-  vertical-align: bottom;
+  vertical-align: top;
+}
+
+.appointment-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+}
+
+.appointment-form textarea:focus {
+  outline: none;
+  border-color: #87ceeb;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(135, 206, 235, 0.3);
 }
 
 .appointment-form button[type="submit"] {
