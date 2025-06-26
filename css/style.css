@@ -8,11 +8,13 @@
   --black: #1e1e1e;
   --grey: #505050;
   --grey2: #f4f4f4;
+  --font1: "Montserrat", sans-serif;
+  --titles: "Archivo Narrow", Verdana, sans-serif;
 }
 
 .page-grid {
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     "nav nav"
     "title title"
     "hero hero"
@@ -124,7 +126,7 @@ header .nav-links a {
 }
 
 .dropdown-parent > a::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   right: -5px;
@@ -148,7 +150,7 @@ header .nav-links a {
   left: 0;
   background-color: var(--grey);
   min-width: 250px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -157,7 +159,7 @@ header .nav-links a {
 }
 
 .dropdown::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -10px;
   left: 20%;
@@ -173,7 +175,7 @@ header .nav-links a {
   opacity: 1;
   visibility: visible;
   border-radius: 1.7rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .dropdown li {
@@ -459,7 +461,6 @@ header nav .phone-number {
 
 .hero-arrow:hover {
   opacity: 1;
-
 }
 
 .hero-arrow-prev {
@@ -488,7 +489,7 @@ header nav .phone-number {
   padding: 10px 20px;
   margin-bottom: 20px;
   max-width: 1000px;
-  text-align: center;
+  text-align: left;
 }
 
 .content-area2 .serving-text {
@@ -757,7 +758,7 @@ footer p {
 }
 
 .form-area {
-  grid-area: section1;
+  grid-area: hero;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -768,15 +769,15 @@ footer p {
   background: var(--blue1);
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  padding: 50px;
+  padding: 50px 60px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   max-width: 800px;
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.appointment-form .title {
-  font-family: "Montserrat", sans-serif;
+.form-area .appointment-form .title {
+  font-family: "Archivo Narrow", sans-serif;
   display: block;
   text-align: center;
   font-size: 2.2em;
@@ -812,8 +813,9 @@ footer p {
 }
 
 .appointment-form input[type="text"] {
+  font-family: "Montserrat", sans-serif;
   width: 100%;
-  padding: 18px 25px;
+  padding: 18px 9px;
   background: rgba(255, 255, 255, 0.15);
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 12px;
@@ -832,7 +834,7 @@ footer p {
 
 .appointment-form input[type="text"]:focus {
   outline: none;
-  border-color: #87CEEB;
+  border-color: #87ceeb;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 20px rgba(135, 206, 235, 0.3);
 }
@@ -881,6 +883,40 @@ footer p {
   font-weight: 300;
 }
 
+.info-area {
+  grid-area: hero;
+  padding: 50px 60px;
+}
+
+.info-title {
+  font-family: var(--titles);
+  color: var(--black);
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+
+.info-area .slogan {
+  font-family: var(--font1);
+  font-weight: 400;
+}
+
+.info-container {
+  border-radius: 2rem;
+  padding: 20px 15px;
+}
+
+.p-1 {
+  font-family: var(--font1);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.p-2 {
+  font-family: var(--font1);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   header nav {
@@ -888,96 +924,96 @@ footer p {
     padding: 20px;
     text-align: center;
   }
-  
+
   nav ul {
     gap: 15px;
     justify-content: center;
     margin: 20px 0;
   }
-  
+
   .contact-info {
     align-items: center;
     text-align: center;
   }
-  
+
   .title {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .title .logo {
     height: 70px;
   }
-  
+
   .title-text h1 {
     font-size: 2rem;
   }
-  
+
   .title-text h3 {
     font-size: 1.1rem;
   }
-  
+
   .hero-slides-container {
     height: 400px;
   }
-  
+
   .hero-image {
     height: 400px;
   }
-  
+
   .hero-overlay {
     padding-left: 20px;
   }
-  
+
   .hero-content {
     margin-top: 150px;
     margin-left: 20px;
   }
-  
+
   .hero-overlay .hero-content h2 {
     font-size: 1.8rem;
   }
-  
+
   .hero-overlay .hero-subtitle {
     font-size: 1rem;
   }
-  
+
   .content-area1 .welcome-text {
     padding: 10px 20px;
     font-size: 1.1rem;
   }
-  
+
   .images-area .images {
     gap: 15px;
   }
-  
+
   .ada-image,
   .isds-image,
   .cds-image,
   .clearcorrect-image {
     max-width: 80px;
   }
-  
+
   .top-row,
   .bottom-row {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .testimonials {
     max-width: 100%;
   }
-  
+
   .map-grid {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .hours-container {
     flex: none;
     margin-top: 20px;
   }
-  
+
   .map-iframe iframe {
     height: 300px;
   }
@@ -988,54 +1024,54 @@ footer p {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   header .nav-links a {
     font-size: 1rem;
   }
-  
+
   .contact-info .phone,
   .contact-info .phone a,
   .contact-info .phone-number {
     font-size: 1.2rem;
   }
-  
+
   .title-text h1 {
     font-size: 1.8rem;
   }
-  
+
   .title-text h3 {
     font-size: 1rem;
   }
-  
+
   .hero-slides-container {
     height: 300px;
   }
-  
+
   .hero-image {
     height: 300px;
   }
-  
+
   .hero-content {
     margin-top: 100px;
     margin-left: 10px;
   }
-  
+
   .hero-overlay .hero-content h2 {
     font-size: 1.5rem;
   }
-  
+
   .hero-button {
     padding: 12px 25px;
     font-size: 1rem;
   }
-  
+
   .content-area1 h2,
   .content-area3 .testimonials-title,
   .content-area4 h2,
   .map-container .map-title {
     font-size: 1.8rem;
   }
-  
+
   .ada-image,
   .isds-image,
   .cds-image,
