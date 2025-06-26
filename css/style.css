@@ -517,13 +517,21 @@ header nav .phone-number {
 
 .ada-image,
 .isds-image,
-.cds-image,
-.clearcorrect-image {
+.cds-image {
   border: var(--white) 4px solid;
   border-radius: 0.5rem;
   padding: 5px 5px;
   box-shadow: #141414 0px 0px 10px;
   max-width: 120px;
+  height: auto;
+}
+
+.clearcorrect-image {
+  border: var(--white) 4px solid;
+  border-radius: 0.5rem;
+  padding: 5px 5px;
+  box-shadow: #141414 0px 0px 10px;
+  max-width: 200px;
   height: auto;
 }
 
@@ -1125,7 +1133,7 @@ footer p {
   .isds-image,
   .cds-image,
   .clearcorrect-image {
-    max-width: 80px;
+    max-width: 200px;
   }
 
   .top-row,
@@ -1235,6 +1243,6 @@ footer p {
   .isds-image,
   .cds-image,
   .clearcorrect-image {
-    max-width: 60px;
+    max-width: 200px;
   }
 }
