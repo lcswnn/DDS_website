@@ -81,3 +81,35 @@ class HeroCarousel {
 document.addEventListener('DOMContentLoaded', () => {
     new HeroCarousel();
 });
+
+// Add this to your existing script.js file
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown-parent');
+    
+    dropdowns.forEach(dropdown => {
+        const button = dropdown.querySelector('.links');
+        
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Close other dropdowns
+            dropdowns.forEach(otherDropdown => {
+                if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove('active');
+                }
+            });
+            
+            // Toggle current dropdown
+            dropdown.classList.toggle('active');
+        });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown-parent')) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+});

@@ -97,7 +97,8 @@ header nav {
   gap: 20px;
 }
 
-nav ul {
+nav ul,
+nav ul li button {
   display: flex;
   list-style: none;
   margin: 0;
@@ -116,6 +117,20 @@ header .nav-links a {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+header .nav-links button {
+  color: #fffafa;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 3px 15px;
+  border-radius: 2rem;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif; /* Add this to match nav font */
+  position: relative; /* Add this for the arrow positioning */
+}
+
 .dropdown-parent {
   position: relative;
 }
@@ -125,7 +140,7 @@ header .nav-links a {
   transition: all 0.3s ease;
 }
 
-.dropdown-parent > a::after {
+.dropdown-parent > .links-dropdown-toggle::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -139,7 +154,15 @@ header .nav-links a {
   transition: transform 0.3s ease;
 }
 
-.dropdown-parent:hover > a::after {
+.dropdown-parent.active .dropdown {
+    display: block;
+}
+
+.dropdown-parent:hover > .links-dropdown-toggle::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.dropdown-parent.active > .links-dropdown-toggle::after {
   transform: translateY(-50%) rotate(180deg);
 }
 
@@ -765,6 +788,7 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 40px;
 }
 
 .appointment-card-images {
@@ -988,8 +1012,13 @@ footer p {
   padding: 30px 30px;
 }
 
+.carecredit-logo {
+    border-radius: 0.3rem;
+  }
+
 @media (max-width: 1441px) {
-  header .nav-links a {
+  header .nav-links a,
+  header .nav-links button {
     font-size: 1rem;
   }
 
@@ -1049,6 +1078,11 @@ footer p {
     text-decoration: none;
     color: #fffafa;
     white-space: nowrap;
+  }
+
+  .form-area {
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 }
 
@@ -1172,6 +1206,11 @@ footer p {
     margin-left: 10px;
   }
 
+  .form-area {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
   .amex,
   .discover,
   .master,
@@ -1183,6 +1222,7 @@ footer p {
   .carecredit-logo {
     width: auto;
     height: 40px;
+    border-radius: 0.3rem;
   }
 }
 
@@ -1192,7 +1232,8 @@ footer p {
     gap: 10px;
   }
 
-  header .nav-links a {
+  header .nav-links a,
+  header .nav-links button {
     font-size: 1rem;
   }
 
@@ -1238,6 +1279,7 @@ footer p {
   .map-container .map-title {
     font-size: 1.8rem;
   }
+
 
   .ada-image,
   .isds-image,
