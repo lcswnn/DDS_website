@@ -109,7 +109,7 @@ nav ul {
 header .nav-links a {
   color: #fffafa;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   padding: 10px 15px;
   border-radius: 2rem;
   background-color: transparent;
@@ -208,7 +208,7 @@ header .nav-links a {
 
 .contact-info .phone {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -217,7 +217,7 @@ header .nav-links a {
 .contact-info .phone a,
 .contact-info .phone-number {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: bold;
   text-decoration: none;
   color: #fffafa;
@@ -225,23 +225,16 @@ header .nav-links a {
 
 .phone-icon {
   width: auto;
-  height: 25px;
+  height: 22px;
   margin-right: 8px;
   vertical-align: middle;
 }
 
 .contact-info .email a {
   font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-decoration: none;
   color: #fffafa;
-}
-
-.contact-info .email {
-  font-family: "Montserrat", sans-serif;
-  margin-bottom: 8px;
-  font-size: 1rem;
-  text-decoration: none;
 }
 
 header .appointment {
@@ -985,6 +978,70 @@ footer p {
 .info-area2 {
   grid-area: section3;
   padding: 30px 30px;
+}
+
+@media (max-width: 1441px) {
+  header .nav-links a {
+    font-size: 1rem;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #fffafa;
+    text-align: right;
+  }
+
+  .contact-info .phone {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-info .phone a,
+  .contact-info .phone-number {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fffafa;
+  }
+
+  .phone-icon {
+    width: auto;
+    height: 19px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  .contact-info .email a {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: #fffafa;
+  }
+
+  .contact-info .email {
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    text-decoration: none;
+  }
+
+  header .appointment {
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--blue3);
+    padding: 13px 15px;
+    transition: all 0.3s ease;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #fffafa;
+    white-space: nowrap;
+  }
 }
 
 /* Mobile Responsiveness */
