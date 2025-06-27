@@ -127,8 +127,8 @@ header .nav-links button {
   transition: background-color 0.3s ease, color 0.3s ease;
   border: none;
   cursor: pointer;
-  font-family: "Montserrat", sans-serif; /* Add this to match nav font */
-  position: relative; /* Add this for the arrow positioning */
+  font-family: "Montserrat", sans-serif; 
+  position: relative;
 }
 
 .dropdown-parent {
@@ -140,7 +140,7 @@ header .nav-links button {
   transition: all 0.3s ease;
 }
 
-.dropdown-parent > .links-dropdown-toggle::after {
+.dropdown-parent > .links::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -158,11 +158,11 @@ header .nav-links button {
     display: block;
 }
 
-.dropdown-parent:hover > .links-dropdown-toggle::after {
+.dropdown-parent:hover > .links::after {
   transform: translateY(-50%) rotate(180deg);
 }
 
-.dropdown-parent.active > .links-dropdown-toggle::after {
+.dropdown-parent.active > .links::after {
   transform: translateY(-50%) rotate(180deg);
 }
 
