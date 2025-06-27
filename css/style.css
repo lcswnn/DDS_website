@@ -185,7 +185,7 @@ header .nav-links button {
   content: "";
   position: absolute;
   top: -10px;
-  left: 20%;
+  left: 25%;
   transform: translateX(-50%);
   width: 0;
   height: 0;
@@ -1016,10 +1016,11 @@ footer p {
     border-radius: 0.3rem;
   }
 
-@media (max-width: 1441px) {
+@media (max-width: 1471px) {
   header .nav-links a,
   header .nav-links button {
     font-size: 1rem;
+    transition: all 0.3 ease;
   }
 
   .contact-info {
