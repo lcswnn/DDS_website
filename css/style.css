@@ -979,6 +979,8 @@ footer p {
   color: var(--black);
   font-weight: bold;
   font-size: 1.1rem;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .p-2 {
@@ -987,6 +989,8 @@ footer p {
   font-weight: 500;
   font-size: 1.1rem;
   margin-bottom: 60px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .appointment-card-images {
