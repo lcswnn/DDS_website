@@ -289,7 +289,7 @@ header nav .phone-number {
   align-items: center;
   justify-content: center;
   gap: 15px;
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 
 .title .logo {
@@ -975,6 +975,7 @@ footer p {
 .info-container {
   border-radius: 2rem;
   margin: 0 auto;
+  margin-top: 30px;
 }
 
 .p-1 {
@@ -1045,7 +1046,7 @@ footer p {
 .background-container {
   grid-area: section1;
   background-color: var(--grey2);
-  margin: 130px 130px 130px 130px;
+  margin: 30px 130px 130px 130px;
   border: var(--blue1) 5px solid;
   border-radius: 2rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -1337,7 +1338,7 @@ footer p {
   }
 
   .info-container {
-    margin: 50px 20px; 
+    margin: 50px 20px;
   }
 
   .credit-card-images {
