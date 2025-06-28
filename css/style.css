@@ -1122,6 +1122,13 @@ footer p {
   font-size: 0.95rem;
 }
 
+.contact-p {
+  text-align: center;
+  font-family: var(--body);
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+}
+
 
 @media (max-width: 1471px) {
   header .nav-links a,
