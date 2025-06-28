@@ -326,10 +326,12 @@ header nav .phone-number {
   margin: 0 auto;
   box-sizing: border-box;
   background-color: var(--white);
-  border-radius: 2rem;
+  border-radius: 2.3rem;
   position: relative;
   overflow: hidden;
   margin-top: 30px;
+  border: var(--blue1) 5px solid;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .hero-slide {
@@ -341,6 +343,7 @@ header nav .phone-number {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  
 }
 
 .hero-slide.active {
@@ -1045,8 +1048,6 @@ footer p {
   margin: 130px 130px 130px 130px;
   border: var(--blue1) 5px solid;
   border-radius: 2rem;
-  border-top: var(--blue1) 5px solid;
-  border-bottom: var(--blue1) 5px solid;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   padding-bottom: 3px;
 }
