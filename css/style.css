@@ -227,6 +227,7 @@ header .nav-links button {
   cursor: pointer;
   padding: 10px;
   z-index: 1001;
+  position: relative;
 }
 
 .hamburger-line {
@@ -237,16 +238,27 @@ header .nav-links button {
   transition: 0.3s;
 }
 
-.hamburger-menu.active .hamburger-line:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.hamburger-menu.active .hamburger-line:nth-child(2) {
+.hamburger-menu.active .hamburger-line {
   opacity: 0;
 }
 
-.hamburger-menu.active .hamburger-line:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
+.hamburger-menu::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35px;
+  height: 35px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hamburger-menu.active::after {
+  opacity: 1;
 }
 
 .mobile-nav {
@@ -255,12 +267,15 @@ header .nav-links button {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: auto;
+  max-height: 80vh;
   background-color: var(--blue1);
   z-index: 1000;
-  padding: 80px 20px 20px;
+  padding: 50px 20px 30px;
   box-sizing: border-box;
   overflow-y: auto;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .mobile-nav.active {
@@ -283,7 +298,7 @@ header .nav-links button {
   padding: 20px 0;
   color: white;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   position: relative;
 }
@@ -303,9 +318,9 @@ header .nav-links button {
 }
 
 .mobile-dropdown {
-  max-height: 0;
+  height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: height 0.3s ease;
   background-color: var(--blue3);
   margin-left: -20px;
   margin-right: -20px;
@@ -313,7 +328,7 @@ header .nav-links button {
 }
 
 .mobile-dropdown.active {
-  max-height: 300px;
+  height: auto;
 }
 
 .mobile-dropdown a {
@@ -334,12 +349,12 @@ header .nav-links button {
   background-color: var(--blue3);
   color: white;
   text-decoration: none;
-  padding: 15px 20px;
-  margin: 30px 0;
+  padding: 12px 15px; 
+  margin: 20px 0; 
   border-radius: 2rem;
   text-align: center;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem; 
 }
 
 .mobile-contact-info {
@@ -352,6 +367,16 @@ header .nav-links button {
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-phone-icon {
+  width: auto;
+  height: 22px;
+  margin-right: 8px;
+  vertical-align: middle;
 }
 
 .mobile-contact-info .mobile-email {

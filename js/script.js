@@ -141,40 +141,33 @@ hamburger.addEventListener("click", function () {
 });
 
 // Mobile dropdown functionality
-const mobileDropdownItems = document.querySelectorAll(
-  ".mobile-nav-item.has-dropdown"
-);
+const mobileDropdownItems = document.querySelectorAll('.mobile-nav-item.has-dropdown');
 
-mobileDropdownItems.forEach((item) => {
-  const link = item.querySelector(".mobile-nav-link");
-  const dropdown = item.querySelector(".mobile-dropdown");
-
-  link.addEventListener("click", function (e) {
+mobileDropdownItems.forEach(item => {
+  const link = item.querySelector('.mobile-nav-link');
+  const dropdown = item.querySelector('.mobile-dropdown');
+  
+  link.addEventListener('click', function(e) {
     e.preventDefault();
-
-    // Toggle current dropdown
-    item.classList.toggle("active");
-    dropdown.classList.toggle("active");
-
-    // Close other dropdowns
-    mobileDropdownItems.forEach((otherItem) => {
+    
+    // Close other dropdowns first
+    mobileDropdownItems.forEach(otherItem => {
       if (otherItem !== item) {
-        otherItem.classList.remove("active");
-        otherItem.querySelector(".mobile-dropdown").classList.remove("active");
+        otherItem.classList.remove('active');
+        const otherDropdown = otherItem.querySelector('.mobile-dropdown');
+        otherDropdown.style.height = '0';
       }
     });
-  });
-});
-
-// Close mobile menu when clicking on a regular link
-const mobileNavLinks = document.querySelectorAll(
-  ".mobile-nav-link:not(.has-dropdown .mobile-nav-link), .mobile-dropdown a, .mobile-appointment"
-);
-
-mobileNavLinks.forEach((link) => {
-  link.addEventListener("click", function () {
-    hamburger.classList.remove("active");
-    mobileNav.classList.remove("active");
-    toggleBodyScroll(false);
+    
+    // Toggle current dropdown
+    if (item.classList.contains('active')) {
+      // Close current dropdown
+      item.classList.remove('active');
+      dropdown.style.height = '0';
+    } else {
+      // Open current dropdown
+      item.classList.add('active');
+      dropdown.style.height = dropdown.scrollHeight + 'px';
+    }
   });
 });
