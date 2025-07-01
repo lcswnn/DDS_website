@@ -2030,6 +2030,10 @@ footer p {
     padding: 30px 20px;
     max-width: 95%;
   }
+
+  .form-area .appointment-form .title {
+    font-size: 1.8rem;
+  }
   
   .appointment-form form {
     grid-template-columns: 1fr;
@@ -2048,7 +2052,7 @@ footer p {
   .appointment-form textarea {
     width: 100%;
     padding: 22px 15px;
-    font-size: 18px;
+    font-size: 15px;
   }
   
   .appointment-form textarea {

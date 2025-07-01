@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Hamburger menu functionality
 const hamburger = document.getElementById("hamburger");
 const mobileNav = document.getElementById("mobileNav");
-const body = document.body;
+const {body} = document;
 
 // Prevent body scroll when mobile menu is open
 function toggleBodyScroll(disable) {
