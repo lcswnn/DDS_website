@@ -141,33 +141,59 @@ hamburger.addEventListener("click", function () {
 });
 
 // Mobile dropdown functionality
-const mobileDropdownItems = document.querySelectorAll('.mobile-nav-item.has-dropdown');
+const mobileDropdownItems = document.querySelectorAll(
+  ".mobile-nav-item.has-dropdown"
+);
 
-mobileDropdownItems.forEach(item => {
-  const link = item.querySelector('.mobile-nav-link');
-  const dropdown = item.querySelector('.mobile-dropdown');
-  
-  link.addEventListener('click', function(e) {
+mobileDropdownItems.forEach((item) => {
+  const link = item.querySelector(".mobile-nav-link");
+  const dropdown = item.querySelector(".mobile-dropdown");
+
+  link.addEventListener("click", function (e) {
     e.preventDefault();
-    
+
     // Close other dropdowns first
-    mobileDropdownItems.forEach(otherItem => {
+    mobileDropdownItems.forEach((otherItem) => {
       if (otherItem !== item) {
-        otherItem.classList.remove('active');
-        const otherDropdown = otherItem.querySelector('.mobile-dropdown');
-        otherDropdown.style.height = '0';
+        otherItem.classList.remove("active");
+        const otherDropdown = otherItem.querySelector(".mobile-dropdown");
+        otherDropdown.style.height = "0";
       }
     });
-    
+
     // Toggle current dropdown
-    if (item.classList.contains('active')) {
+    if (item.classList.contains("active")) {
       // Close current dropdown
-      item.classList.remove('active');
-      dropdown.style.height = '0';
+      item.classList.remove("active");
+      dropdown.style.height = "0";
     } else {
       // Open current dropdown
-      item.classList.add('active');
-      dropdown.style.height = dropdown.scrollHeight + 'px';
+      item.classList.add("active");
+      dropdown.style.height = dropdown.scrollHeight + "px";
     }
   });
+});
+
+function openHoursModal() {
+  const modal = document.getElementById("hoursModal");
+  modal.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeHoursModal() {
+  const modal = document.getElementById("hoursModal");
+  modal.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+document.getElementById("hoursModal").addEventListener("click", function (e) {
+  if (e.target === this) {
+    closeHoursModal();
+  }
+});
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    closeHoursModal();
+  }
 });
