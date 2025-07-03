@@ -1649,6 +1649,26 @@ footer p {
   }
 }
 
+.video {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 750px;
+  margin: 30px auto 0;
+  position: relative;
+}
+
+.clearcorrect-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  max-width: 750px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: var(--blue1) 5px solid;
+}
+
 @media (max-width: 1471px) {
   header .nav-links a,
   header .nav-links button {
@@ -2277,6 +2297,16 @@ footer p {
     width: 35px;
     height: 35px;
   }
+
+  .video {
+    max-width: 95%;
+    margin: 15px auto 0;
+  }
+  
+  .clearcorrect-video {
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
 }
 
 @media (max-width: 480px) {
@@ -2390,6 +2420,28 @@ footer p {
   
   .profile-content p {
     font-size: 0.95rem;
+  }
+
+  .video {
+    max-width: 100%;
+    margin: 10px auto 0;
+    padding: 0 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .clearcorrect-video {
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+  }
+
+
+  .info-paragraphs ul {
+    padding: 10px;
   }
 
 }
