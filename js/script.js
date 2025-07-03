@@ -197,3 +197,9 @@ document.addEventListener("keydown", function (e) {
     closeHoursModal();
   }
 });
+
+function handleEmailClick(event) {
+  setTimeout(() => {
+    alert('If your email client didn\'t open, please copy this email: dianegarrisondds@gmail.com');
+  }, 500);
+}

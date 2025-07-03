@@ -8,6 +8,7 @@
   --black: #1e1e1e;
   --grey: #505050;
   --grey2: #f4f4f4;
+  --grey3: #686868;
   --body: "Montserrat", sans-serif;
   --titles: "Archivo Narrow", Verdana, sans-serif;
 }
@@ -82,7 +83,7 @@ body {
 header nav {
   font-family: "Montserrat", sans-serif;
   background-color: var(--blue1);
-  padding: 26px;
+  padding: 16px;
   margin-bottom: 30px;
   display: flex;
   align-items: center;
@@ -105,9 +106,9 @@ nav ul li button {
 header .nav-links a {
   color: #fffafa;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  padding: 10px 15px;
+  padding: 0px 15px;
   border-radius: 2rem;
   background-color: transparent;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -129,6 +130,71 @@ header .nav-links button {
   cursor: pointer;
   font-family: "Montserrat", sans-serif; 
   position: relative;
+}
+
+.nav-social-buttons {
+  display: flex;
+  gap: 25px;
+  margin-top: 8px;
+  justify-content: flex-end;
+}
+
+.nav-social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-social-button:hover {
+  background: var(--blue3);
+  border-color: var(--blue3);
+  transform: translateY(-2px);
+}
+
+.nav-social-icon {
+  width: 25px;
+  height: auto;
+  fill: #fffafa;
+}
+
+.mobile-nav-social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-nav-social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-social-button:hover {
+  background: var(--blue3);
+  border-color: var(--blue3);
+}
+
+.mobile-nav-social-icon {
+  width: 22px;
+  height: 22px;
+  fill: #fffafa;
 }
 
 .dropdown-parent {
@@ -155,7 +221,7 @@ header .nav-links button {
 }
 
 .dropdown-parent.active .dropdown {
-    display: block;
+  display: block;
 }
 
 .dropdown-parent:hover > .links::after {
@@ -179,13 +245,16 @@ header .nav-links button {
   transition: all 0.3s ease;
   display: block;
   margin-top: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .dropdown::before {
   content: "";
   position: absolute;
   top: -10px;
-  left: 25%;
+  left: 20%;
   transform: translateX(-50%);
   width: 0;
   height: 0;
@@ -205,20 +274,38 @@ header .nav-links button {
   list-style: none;
   display: block;
   width: 100%;
+  padding: 10px 0px;
+  border-bottom: var(--grey3) 1px solid;
+}
+
+.dropdown li:first-child {
+  border-top-left-radius: 1.7rem;
+  border-top-right-radius: 1.7rem;
+}
+
+.dropdown li:last-child {
+  border-bottom: none;
+  border-bottom-left-radius: 1.7rem;
+  border-bottom-right-radius: 1.7rem;
 }
 
 .dropdown a {
   display: block;
-  padding: 10px 15px;
   text-decoration: none;
-  color: #f5f5f5;
+  color: var(--grey2);
   font-size: 1.1rem;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
-.dropdown a:hover {
-  background-color: #f5f5f5;
+.dropdown li:hover {
+  background-color: var(--grey2);
+}
+
+.dropdown li:hover a {
   color: var(--black);
-  border-radius: 1.7rem;
 }
 
 .hamburger-menu {
@@ -445,10 +532,6 @@ header .appointment:hover {
   color: var(--black);
   transform: translateY(-2px);
   box-shadow: 0 12px 35px rgba(52, 152, 219, 0.4);
-}
-
-header nav .phone-number {
-  padding: 0px 15px;
 }
 
 .title {
@@ -1124,7 +1207,6 @@ footer p {
   transform: translateY(0);
 }
 
-/* Disclaimer text */
 .appointment-form::after {
   content: "Please do not submit any Protected Health Information (PHI).";
   display: block;
@@ -1138,6 +1220,15 @@ footer p {
 .info-area1 {
   grid-area: section1;
   padding: 30px 30px;
+}
+
+.social-info-title {
+  font-family: var(--body);
+  color: var(--black);
+  font-weight: 600;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 70px;
 }
 
 .info-title {
@@ -1367,7 +1458,6 @@ footer p {
   opacity: 0.8;
 }
 
-/* Social media buttons - styled like contact buttons */
 .social-buttons {
   display: flex;
   justify-content: center;
@@ -1418,7 +1508,6 @@ footer p {
   letter-spacing: 0.5px;
 }
 
-/* Modal Styles */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -1443,7 +1532,7 @@ footer p {
   border-radius: 20px;
   max-width: 500px;
   width: 90%;
-  max-height: 80vh;
+  max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   border: 3px solid var(--blue1);
@@ -1540,7 +1629,6 @@ footer p {
   line-height: 1.5;
 }
 
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1560,12 +1648,6 @@ footer p {
     opacity: 1;
   }
 }
-
-/* Mobile responsive for modal */
-@media (max-width: 768px) {
-  
-}
-
 
 @media (max-width: 1471px) {
   header .nav-links a,
@@ -1827,8 +1909,8 @@ footer p {
   }
 
   .background-container {
-    margin: 30px auto !important; /* Center horizontally */
-    max-width: 90% !important; /* Use 95% of screen width */
+    margin: 30px auto !important; 
+    max-width: 90% !important; 
   }
   
   .team-member-profile {
@@ -1893,7 +1975,6 @@ footer p {
   }
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
   header nav {
     justify-content: center;
@@ -2087,8 +2168,8 @@ footer p {
   }
 
   .background-container {
-    margin: 30px auto !important; /* Center horizontally */
-    max-width: 90% !important; /* Use 95% of screen width */
+    margin: 30px auto !important; 
+    max-width: 90% !important; 
   }
   
   .team-member-profile {
